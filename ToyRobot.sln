@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyRobot", "ToyRobot\ToyRobot.csproj", "{3FB2CB9E-7C45-4313-9688-2BDCD5160C25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyRobot.Test", "ToyRobot.Test\ToyRobot.Test.csproj", "{357813F0-9F26-47B2-A2DE-0523B5105C26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3FB2CB9E-7C45-4313-9688-2BDCD5160C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FB2CB9E-7C45-4313-9688-2BDCD5160C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FB2CB9E-7C45-4313-9688-2BDCD5160C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{357813F0-9F26-47B2-A2DE-0523B5105C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357813F0-9F26-47B2-A2DE-0523B5105C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{357813F0-9F26-47B2-A2DE-0523B5105C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{357813F0-9F26-47B2-A2DE-0523B5105C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

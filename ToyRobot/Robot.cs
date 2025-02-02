@@ -4,27 +4,27 @@ namespace ToyRobot;
 
 public class Robot(int tableSize) : IRobot
 {
-    private int? _x;
-    private int? _y;
-    private Direction _direction;
+    public int? X { private set; get; }
+    public int? Y { private set; get; }
+    public Direction Direction {private set; get; }
     private readonly int _tableSize = tableSize;
 
     public bool Place(int x, int y, Direction direction)
     {
         if (!IsValidPosition(x, y))
             return false;
-        _x = x;
-        _y = y;
-        _direction = direction;
+        X = x;
+        Y = y;
+        Direction = direction;
         return true;
     }
 
     public bool Move()
     {
-        var newX = _x;
-        var newY = _y;
+        var newX = X;
+        var newY = Y;
 
-        switch (_direction)
+        switch (Direction)
         {
             case Direction.NORTH:
                 newX++;
@@ -43,33 +43,33 @@ public class Robot(int tableSize) : IRobot
         if (!IsValidPosition(newX, newY))
             return false;
 
-        _x = newX;
-        _y = newY;
+        X = newX;
+        Y = newY;
         return true;
     }
 
     public bool Left()
     {
-        _direction = _direction switch
+        Direction = Direction switch
         {
             Direction.NORTH => Direction.WEST,
             Direction.WEST => Direction.SOUTH,
             Direction.SOUTH => Direction.EAST,
             Direction.EAST => Direction.NORTH,
-            _ => _direction
+            _ => Direction
         };
         return true;
     }
 
     public bool Right()
     {
-        _direction = _direction switch
+        Direction = Direction switch
         {
             Direction.NORTH => Direction.EAST,
             Direction.EAST => Direction.SOUTH,
             Direction.SOUTH => Direction.WEST,
             Direction.WEST => Direction.NORTH,
-            _ => _direction
+            _ => Direction
         };
         return true;
     }
@@ -79,7 +79,13 @@ public class Robot(int tableSize) : IRobot
         return x >= 0 && x < _tableSize && y >= 0 && y < _tableSize;
     }
 
-    public string Report() => $"{_x},{_y},{_direction}";
+    public string Report()
+    {
+        if (IsValidPosition(X, Y))
+            return $"{X},{Y},{Direction}";
+        else
+            return null;
+    }
 }
 
 public enum Direction
