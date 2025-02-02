@@ -8,7 +8,7 @@ var serviceProvider = new ServiceCollection()
 
 var robot = serviceProvider.GetRequiredService<IRobot>();
 
-Console.WriteLine("Hello Human! I'm your Toy Robot Andy. Place me on the table to start.");
+Console.WriteLine("Hello Human! I'm your Toy Robot. Place me on the table to start.");
 Console.WriteLine("Available commands: PLACE X,Y,DIRECTION, MOVE, LEFT, RIGHT, REPORT, EXIT");
 Console.WriteLine("Example: PLACE 0,0,NORTH");
 
@@ -68,9 +68,8 @@ while (true)
 
     if (!isCommandValid)
         Console.WriteLine("Invalid command. Available commands: PLACE X,Y,DIRECTION, MOVE, LEFT, RIGHT, REPORT, EXIT");
-
-    if (!isCommandSuccess)
-        Console.WriteLine("Command unsuccessful. Make sure you have placed me on the table first and try not to push me off the table please.");
+    else if (!isCommandSuccess)
+        Console.WriteLine("Command unsuccessful. Make sure you have placed me on the table first and try not to push me off the table please. Maximum table dimension is 5 * 5");
 }
 
 Console.WriteLine("Goodbye! Press any key to exit.");
