@@ -27,16 +27,16 @@ public class Robot(int tableSize) : IRobot
         switch (Direction)
         {
             case Direction.NORTH:
-                newX++;
-                break;
-            case Direction.SOUTH:
-                newX--;
-                break;
-            case Direction.EAST:
                 newY++;
                 break;
-            case Direction.WEST:
+            case Direction.SOUTH:
                 newY--;
+                break;
+            case Direction.EAST:
+                newX++;
+                break;
+            case Direction.WEST:
+                newX--;
                 break;
         }
 

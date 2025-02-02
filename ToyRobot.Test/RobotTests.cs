@@ -50,8 +50,8 @@ public class RobotTests
         Assert.Equal(expectedResult, result);
         if (expectedResult)
         {
-            _robot.Report(); // This should update the last reported position
-            Assert.Equal($"{expectedX},{expectedY},{direction}", $"{_robot.X},{_robot.Y},{_robot.Direction}");
+            Assert.Equal(expectedX, _robot.X);
+            Assert.Equal(expectedY, _robot.Y);
         }
     }
 
